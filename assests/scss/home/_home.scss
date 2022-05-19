@@ -1,53 +1,76 @@
 .section{
     display: flex;
-    width: 100%;
+    width: $mainSize;
+    @media screen and (min-width: 370px) and (max-width: 414px) {
+        flex-direction: column;
+    }
+    @media screen and (min-width: 414px) and (max-width: 768px) {
+        flex-direction:column;
+    }
     .image1 {
         width: 20%;
         img{
-           height: 500px; 
-           width: 100%;
+        @include imgSize (500px,100%,cover)
+        }
+        @media screen and (min-width: 370px) and (max-width: 414px) {
+            .image1{
+@include imgSize1( 300px,100%);
+            }   
+        }
+    }
+    @media screen and (min-width: 414px) and (max-width: 768px) {
+        .image1{
+    @include imgSize1(300px, 100%);
         }
     }
     .big-text{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        width: 60%;
-        background-color: antiquewhite;
+    @include Flex (column,center,center,60%);
+        background-color:$bgColor;
          p{
-            font-size: 60px;
-            text-align: center;
-            font-weight: 600;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+@include font (60px,center,600);
+         font-family: Georgia, 'Times New Roman', Times, serif;
         }
         span{
-            font-size: 30px;
-            text-align: center;
-            font-weight: 600;
+@include font (30px,center,600)
         }
         button {
             padding: 8px;
-            background-color: black;
+            background-color:$bgColor1;
             a{
                 text-decoration: none;
                 color: antiquewhite;
             }
+            &:hover{
+                background-color: gray;
+                border: none;
+                transition: .3s ease;
+                padding: 8px;
+            }
         }
     }
+    @media screen and (min-width: 370px) and (max-width: 414px) {
+        .big-text{
+            width: $mainSize;
+        }
+    }
+    @media screen and (min-width: 414px) and (max-width: 768px) {
+    .big-text{
+        width: $mainSize;
+    }
+}
 }
 #zeynab1{
     .col-lg-3{
         img{
         width: 100%;
+        object-fit: cover;
         }
         .text-p p{
             margin-top: 20px;
         }
     }
     .text-row p{
-        font-size: 2rem;
-        margin-top: 1rem;
+@include row-p (2rem,1rem);
     }
 }
 #sevda1{
@@ -57,15 +80,19 @@
         margin-bottom: 20px;
         
         button{
-            border: 1px solid;
-            padding: 8px;
-            width: 100%;
-            background-color: inherit;
+@include button (1px solid,8px,100%,inherit);
             a{
-                text-decoration: none;
-                color: black;
-                font-size: small;
+@include a(none,small);
+                color:$bgColor1;
             }
+        }
+        &:hover{
+            background-color:$bgColor1;
+            transition: .3s ease;
+            a{
+            color: $bgColor;    
+            }
+            
         }
     }
     .text-row p{
@@ -76,19 +103,28 @@
 }
 #style{
     .col-lg-6{
-        border-top:2px solid ;
-     margin-top: 3rem; 
-     padding: 1rem; 
+@include stylesize(2px solid,3rem,1rem);
      .image-2{
     img{
         width: 100%;
+        object-fit: cover;
     } 
     }
     .text-10{
         margin-bottom: 1rem;
         a{
             text-decoration: none;
+            color: $bgColor1;  
+            
+        }   
+    }
+    .text-13{
+        text-align: end;
+        margin-bottom: 1rem;
+        a{
+            text-decoration: none;
             color: black;  
+            
         }   
     }
     .text-11{
@@ -99,6 +135,13 @@
         a{
             color: black;
             font-size: 12px;
+        }
+        &:hover{
+            a,p{
+         color: gray;
+         transition: .3s;
+            }
+            
         }
     }
 }

@@ -1,0 +1,40 @@
+@mixin imgSize ($height,$width,$fit) {
+    height: $height; 
+    width: $width;
+    object-fit: $fit;
+}
+@mixin imgSize1 ($height,$width) {
+    height: $height;
+    width: $width;
+}
+@mixin Flex ($f-direct,$j-content,$a-items,$width) {
+    flex-direction: $f-direct;
+    justify-content: $j-content;
+    align-items: $a-items;
+    width:$width ;
+    display: flex;  
+}
+@mixin font ($size,$taling,$fweight) {
+    font-size: $size;
+    text-align:$taling;
+    font-weight:$fweight;
+}
+@mixin button ($solid,$padding,$width,$bgcolor) {
+    border:$solid;
+    padding: $padding;
+    width: $width;
+    background-color: $bgcolor;
+}
+@mixin a ($tdec,$fsize) {
+    text-decoration: $tdec;
+    font-size: $fsize;
+}
+@mixin row-p ($fsize,$mt) {
+    font-size: $fsize;
+    margin-top: $mt;
+}
+@mixin stylesize ($solid,$mt,$padding) {
+    border-top:$solid ;
+    margin-top: $mt; 
+    padding:$padding; 
+}

@@ -5,6 +5,24 @@
   width: 100%;
 }
 
+@media screen and (min-width: 370px) and (max-width: 414px) {
+  .section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 768px) {
+  .section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .section .image1 {
   width: 20%;
 }
@@ -12,6 +30,22 @@
 .section .image1 img {
   height: 500px;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 370px) and (max-width: 414px) {
+  .section .image1 .image1 {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 768px) {
+  .section .image1 {
+    height: 300px;
+    width: 100%;
+  }
 }
 
 .section .big-text {
@@ -25,10 +59,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
   background-color: antiquewhite;
 }
 
@@ -55,8 +89,30 @@
   color: antiquewhite;
 }
 
+.section .big-text button:hover {
+  background-color: gray;
+  border: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  padding: 8px;
+}
+
+@media screen and (min-width: 370px) and (max-width: 414px) {
+  .section .big-text {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 768px) {
+  .section .big-text {
+    width: 100%;
+  }
+}
+
 #zeynab1 .col-lg-3 img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #zeynab1 .col-lg-3 .text-p p {
@@ -86,8 +142,18 @@
 
 #sevda1 .col-lg-3 button a {
   text-decoration: none;
-  color: black;
   font-size: small;
+  color: black;
+}
+
+#sevda1 .col-lg-3:hover {
+  background-color: black;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+#sevda1 .col-lg-3:hover a {
+  color: antiquewhite;
 }
 
 #sevda1 .text-row p {
@@ -103,6 +169,8 @@
 
 #style .col-lg-6 .image-2 img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #style .col-lg-6 .text-10 {
@@ -110,6 +178,16 @@
 }
 
 #style .col-lg-6 .text-10 a {
+  text-decoration: none;
+  color: black;
+}
+
+#style .col-lg-6 .text-13 {
+  text-align: end;
+  margin-bottom: 1rem;
+}
+
+#style .col-lg-6 .text-13 a {
   text-decoration: none;
   color: black;
 }
@@ -122,6 +200,12 @@
 #style .col-lg-6 .text-11 a {
   color: black;
   font-size: 12px;
+}
+
+#style .col-lg-6 .text-11:hover a, #style .col-lg-6 .text-11:hover p {
+  color: gray;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 *, *::after, *::before {
